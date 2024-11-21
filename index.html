@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بازی گل یا پوچ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>بازی گل یا پوچ</h1>
+    <p>یک انتخاب کنید:</p>
+    <button onclick="playGame('گل')">گل</button>
+    <button onclick="playGame('پوچ')">پوچ</button>
+    
+    <div class="result" id="result"></div>
+
+    <script>
+        function playGame(userChoice) {
+            const choices = ['گل', 'پوچ'];
+            const randomChoice = choices[Math.floor(Math.random() * 2)];
+            const resultDiv = document.getElementById('result');
+            
+            if (userChoice === randomChoice) {
+                resultDiv.innerHTML = `شما برنده شدید! انتخاب شما: ${userChoice} - نتیجه: ${randomChoice}`;
+            } else {
+                resultDiv.innerHTML = `باختید! انتخاب شما: ${userChoice} - نتیجه: ${randomChoice}`;
+            }
+        }
+    </script>
+</body>
+</html>
